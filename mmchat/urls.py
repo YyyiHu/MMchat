@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.authtoken')),
+    path('auth/', include('djoser.urls')), # Endpoints for user registration, login, password reset, etc.
+    path('auth/', include('djoser.urls.jwt')),  # JWT-based authentication
+    path('', include('mirte_app.urls')),
 ]
